@@ -1,5 +1,3 @@
-//import RandomMap from "./scenes/randomMapScene.js";
-
 const config = {
   type: Phaser.AUTO, // Which renderer to use
   width: 1280, // Canvas width in pixels
