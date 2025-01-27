@@ -1,16 +1,15 @@
 class TinyTown extends Phaser.Scene {
   constructor() {
-    super("randomMapScene");
+    super("TinyTown");
+  }
+  preload() {}
+  init() {
     this.mapWidth = 20;
     this.mapHeight = 15;
     this.tileSize = 64;
     this.noiseSeed = Math.random();
     this.noise_window = 2;
     noise.seed(this.noiseSeed);
-  }
-  preload() {
-    this.load.path = "./assets/";
-    this.load.image("tiles", "Tilesheet/mapPack_tilesheet.png");
   }
   create() {
     const array = this.generateRandomMap();
@@ -19,8 +18,8 @@ class TinyTown extends Phaser.Scene {
       tileWidth: this.tileSize,
       tileHeight: this.tileSize,
     });
-    map.addTilesetImage("tiles");
-    const layer = map.createLayer(0, "tiles", 0, 0);
+    map.addTilesetImage("terrain-tiles");
+    const layer = map.createLayer(0, "terrain-tiles", 0, 0);
     this.reload = this.input.keyboard.addKey("R");
     this.shrink = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.COMMA);
     this.expand = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.PERIOD);
@@ -76,8 +75,8 @@ class TinyTown extends Phaser.Scene {
       tileWidth: this.tileSize,
       tileHeight: this.tileSize,
     });
-    map.addTilesetImage("tiles"); // Add the tileset to the map
-    const layer = map.createLayer(0, "tiles", 0, 0); // Create the tile layer
+    map.addTilesetImage("terrain-tiles"); // Add the tileset to the map
+    const layer = map.createLayer(0, "terrain-tiles", 0, 0); // Create the tile layer
   }
 }
 /*

@@ -3,7 +3,7 @@ const config = {
   width: 1280, // Canvas width in pixels
   height: 960, // Canvas height in pixels
   parent: "game-container", // ID of the DOM element to add the canvas to
-  scene: TinyTown,
+  scene: [Load, TinyTown],
   scale: {
     mode: Phaser.Scale.FIT, // Automatically fit the canvas to the screen
     autoCenter: Phaser.Scale.CENTER_BOTH, // Center the canvas
